@@ -1,11 +1,14 @@
-import { useState } from 'react';
 import './App.css';
-import { JSX } from 'react/jsx-runtime';
+import { a } from './utils/index'
 
-function App(): JSX.Element {
+function App() {
 	return (
     	<div className="App"></div>
   	);
+}
+
+export function Hello() {
+	return a;
 }
 
 export default App;

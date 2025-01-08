@@ -30,7 +30,7 @@
   },
   "pnpm": {
     "overrides": {
-      "@rspack/core": "/Users/bytedance/Documents/codes/rspack/packages/rspack"
+      "@rspack/core": "npm:@rspack-canary/core@1.2.0-canary-fe50e1ef-20250108041440"
     }
   }
 }

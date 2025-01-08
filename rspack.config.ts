@@ -1,7 +1,7 @@
 import { defineConfig } from '@rspack/cli';
 import { rspack } from '@rspack/core';
+import { resolve } from 'node:path';
 import * as RefreshPlugin from '@rspack/plugin-react-refresh';
-import { resolve } from 'path';
 
 const isDev = process.env.NODE_ENV === 'development';
 
@@ -49,6 +49,7 @@ export default defineConfig({
                 emitDts: {
                   rootDir: resolve(__dirname, 'src'),
                   outDir: resolve(__dirname, 'dist-swc'),
+                  abortOnError: true
                 },
               },
               env: { targets },
@@ -64,14 +65,6 @@ export default defineConfig({
     }),
     isDev ? new RefreshPlugin() : null,
     new rspack.SwcDtsEmitRspackPlugin(),
-    // new rspack.CopyRspackPlugin({
-    // 	patterns: [
-    // 		{
-    // 			from: resolve(__dirname, './src/assets'),
-    // 			to: resolve(__dirname, './dist/assets'),
-    // 		},
-    // 	],
-    // }),
   ].filter(Boolean),
   optimization: {
     minimizer: [
